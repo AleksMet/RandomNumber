@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+final class MainViewController: UIViewController {
 
     @IBOutlet var logInButton: UIButton!
     @IBOutlet var remindPassLabel: UILabel!
