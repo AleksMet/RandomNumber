@@ -4,6 +4,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -18,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="26" translatesAutoresizingMaskIntoConstraints="NO" id="W4T-eH-wrU">
-                                <rect key="frame" x="20" y="333" width="353" height="211.33333333333337"/>
+                                <rect key="frame" x="20" y="338.33333333333331" width="353" height="200.66666666666669"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="User name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Qgl-Ci-qCf">
                                         <rect key="frame" x="0.0" y="0.0" width="353" height="34"/>
@@ -30,29 +31,49 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" secureTextEntry="YES" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
                                     </textField>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="50" baselineRelativeArrangement="YES" translatesAutoresizingMaskIntoConstraints="NO" id="prY-b6-sXP">
+                                        <rect key="frame" x="0.0" y="119.99999999999999" width="353" height="20.333333333333329"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Remind Login" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ke0-pd-fT5">
+                                                <rect key="frame" x="0.0" y="0.0" width="167.66666666666666" height="20.333333333333332"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" name="AccentColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Remind Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ueQ-ka-2KT">
+                                                <rect key="frame" x="217.66666666666663" y="0.0" width="135.33333333333337" height="20.333333333333332"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" name="AccentColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <variation key="heightClass=regular-widthClass=compact" spacing="50"/>
+                                    </stackView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vkG-6f-JX4">
-                                        <rect key="frame" x="0.0" y="119.99999999999999" width="353" height="34.333333333333329"/>
+                                        <rect key="frame" x="0.0" y="166.33333333333337" width="353" height="34.333333333333343"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="filled" title="Log In"/>
                                     </button>
-                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" translatesAutoresizingMaskIntoConstraints="NO" id="Vh8-kF-zdg">
-                                        <rect key="frame" x="0.0" y="180.33333333333337" width="353" height="32"/>
-                                        <segments>
-                                            <segment title="First"/>
-                                            <segment title="Second"/>
-                                        </segments>
-                                    </segmentedControl>
                                 </subviews>
                             </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" systemColor="systemGray2Color"/>
+                        <color key="backgroundColor" systemColor="systemGray6Color"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="W4T-eH-wrU" secondAttribute="trailing" constant="20" id="6YC-AM-NeV"/>
                             <constraint firstItem="W4T-eH-wrU" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="6ts-2a-TUY"/>
                             <constraint firstItem="W4T-eH-wrU" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="kSt-bx-nre"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="logInButton" destination="vkG-6f-JX4" id="Ydp-pc-Uqp"/>
+                        <outlet property="passwordField" destination="6Be-Gm-dzx" id="Jpk-zZ-V4h"/>
+                        <outlet property="passwordOutlet" destination="6Be-Gm-dzx" id="6RN-Vx-1HZ"/>
+                        <outlet property="remindLoginLabel" destination="ke0-pd-fT5" id="aEv-QA-0OB"/>
+                        <outlet property="remindPassLabel" destination="ueQ-ka-2KT" id="X9e-jU-W1k"/>
+                        <outlet property="userNameField" destination="Qgl-Ci-qCf" id="wab-bv-Fb4"/>
+                        <outlet property="userOutlet" destination="Qgl-Ci-qCf" id="jMy-HK-VQz"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -60,8 +81,11 @@
         </scene>
     </scenes>
     <resources>
-        <systemColor name="systemGray2Color">
-            <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <namedColor name="AccentColor">
+            <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemGray6Color">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
